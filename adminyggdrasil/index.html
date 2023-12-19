@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>PizzaBot Admin</title>
+  </head>
+  <body>
+	  <form id="adminPanel">
+		  <label for="pricePerSlice">Price per Slice</label>
+		  <input type="number" id="pricePerSlice" step=".01"></input>
+	      <button type="button" onclick="submitChanges()">Submit Changes</button>
+	  </form>
+	<br>
+	<button onclick="dropTable()">Truncate Table</button>
+	  
+	  <script>
+		function dropTable() {
+    		if (confirm("Are you sure you want to truncate the table? This action is irreversible.")) {
+				fetch('admin.php')
+					.then(response => response.text())
+					.then(data => {
+						alert(data); // Display the response from the server
+					})
+					.catch(error => {
+						console.error('Error truncating table:', error);
+					});
+			}
+		}
+	</script>
+		<script src="script.js"></script>
+  </body>
+</html>
