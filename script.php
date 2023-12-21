@@ -3,7 +3,7 @@
 // Database configuration
 $host = "localhost:3306";
 $username = "poster";
-$password = "aYvk63@41";
+$password = "";
 $database = "poster";
 
 // Create a database connection
